@@ -1,3 +1,5 @@
 {
-  "itemGroup.icefire.icefire_itemgroup": "icefire"
+  "item.icefire.test_item": "Test Item",
+
+  "itemGroup.icefire.icefire_itemgroup": ".ice//fire"
 }
