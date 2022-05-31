@@ -1,6 +1,14 @@
 {
-  "item.icefire.test_item": "Test Item",
+  "block.icefire.cracked_ice": "Cracked Ice",
+  "block.icefire.deep_freeze_ice": "Deep Freeze Ice",
+  "block.icefire.fast_ice": "Fast Ice",
+  "block.icefire.slow_ice": "Slow Ice",
+  "item.icefire.fire_sword": "Fire Sword",
   "item.icefire.frozen_fish": "Frozen Fish",
-
+  "item.icefire.ice_cube": "Ice Cube",
+  "item.icefire.ice_shard": "Ice Shard",
+  "item.icefire.ice_sword": "Ice Sword",
+  "item.icefire.nether_orb": "Nether Orb",
+  "item.icefire.test_item": "Test Item",
   "itemGroup.icefire.icefire_itemgroup": ".ice//fire"
 }
