@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "icefire",
+  "version": "${version}",
+
+  "name": ".ice//fire",
+  "description": "Icy and fiery additions to Minecraft",
+  "authors": [
+    "system-controller"
+  ],
+  "contact": {
+    "homepage": "https://ikalon.com/icefire/",
+    "sources": "https://github.com/system-controller/icefire"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.ikalon.icefire.IceFire"
+    ]
+  },
+  "mixins": [
+    "icefire.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.18.2",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
