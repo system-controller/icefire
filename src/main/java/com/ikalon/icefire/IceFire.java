@@ -18,7 +18,7 @@ public class IceFire implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-
+		LOGGER.info("blah");
 		LOGGER.info("Begin loading " + MOD_ID);
 		ModItems.registerModItems();
 		LOGGER.info("Finished loading " + MOD_ID);
