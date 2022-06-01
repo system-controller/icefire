@@ -1,6 +1,7 @@
 package com.ikalon.icefire;
 
 import com.ikalon.icefire.blocks.ModBlocks;
+import com.ikalon.icefire.items.ModItemGroup;
 import com.ikalon.icefire.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -21,7 +22,8 @@ public class IceFire implements ModInitializer {
 		// Proceed with mild caution.
 		LOGGER.info("Begin loading " + MOD_ID);
 		ModItems.registerModItems();
-		LOGGER.info("Finished loading " + MOD_ID);
+		ModItemGroup.registerModItemGroup();
 		ModBlocks.registerModBlocks();
+		LOGGER.info("Finished loading " + MOD_ID);
 	}
 }

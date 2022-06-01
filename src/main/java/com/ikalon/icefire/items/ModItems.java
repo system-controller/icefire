@@ -2,7 +2,6 @@ package com.ikalon.icefire.items;
 
 import com.ikalon.icefire.IceFire;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
