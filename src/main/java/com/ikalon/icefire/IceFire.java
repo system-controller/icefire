@@ -21,6 +21,7 @@ public class IceFire implements ModInitializer {
 		LOGGER.info("blah");
 		LOGGER.info("joke");
 		LOGGER.info("HELLO");
+		LOGGER.info("HELLO2");
 		LOGGER.info("Begin loading " + MOD_ID);
 		ModItems.registerModItems();
 		LOGGER.info("Finished loading " + MOD_ID);
