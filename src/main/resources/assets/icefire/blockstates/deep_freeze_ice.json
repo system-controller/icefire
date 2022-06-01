@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "" : { "model": "icefire:block/deep_freeze_ice"}
+  }
+}

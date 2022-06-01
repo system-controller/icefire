@@ -9,11 +9,29 @@ import net.minecraft.util.registry.Registry;
 
 
 public class ModItems {
-    public static final Item TEST_ITEM = registerItem("test_item",
+
+    public static final Item FIRE_SWORD = registerItem("fire_sword",
             new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 
     public static final Item FROZEN_FISH = registerItem("frozen_fish",
             new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+
+    public static final Item ICE_CUBE = registerItem("ice_cube",
+            new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+
+    public static final Item ICE_SHARD = registerItem("ice_shard",
+            new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+
+    public static final Item ICE_SWORD = registerItem("ice_sword",
+            new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+
+    public static final Item NETHER_ORB = registerItem("nether_orb",
+            new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+
+    public static final Item TEST_ITEM = registerItem("test_item",
+            new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+
+
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM,

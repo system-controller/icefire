@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "" : { "model": "icefire:block/slow_ice"}
+  }
+}
