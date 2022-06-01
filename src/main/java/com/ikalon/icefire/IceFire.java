@@ -19,6 +19,7 @@ public class IceFire implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		LOGGER.info("blah");
+		LOGGER.info("joke");
 		LOGGER.info("Begin loading " + MOD_ID);
 		ModItems.registerModItems();
 		LOGGER.info("Finished loading " + MOD_ID);
