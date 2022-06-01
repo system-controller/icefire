@@ -33,7 +33,9 @@ public class ModItems {
                     new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 
     public static final Item NETHER_ORB = registerItem("nether_orb",
-            new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+            new Item(new FabricItemSettings()
+                    .maxDamage(100)
+                    .group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 
     public static final Item TEST_ITEM = registerItem("test_item",
             new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
