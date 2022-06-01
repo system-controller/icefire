@@ -13,7 +13,9 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 
     public static final Item FROZEN_FISH = registerItem("frozen_fish",
-            new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+            new Item(new FabricItemSettings()
+                    .group(ModItemGroup.ICEFIRE_ITEMGROUP)
+                    .food(ModFoodComponents.FROZEN_FISH)));
 
     public static final Item ICE_CUBE = registerItem("ice_cube",
             new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
