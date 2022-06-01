@@ -20,6 +20,7 @@ public class IceFire implements ModInitializer {
 		// Proceed with mild caution.
 		LOGGER.info("blah");
 		LOGGER.info("joke");
+		LOGGER.info("HELLO");
 		LOGGER.info("Begin loading " + MOD_ID);
 		ModItems.registerModItems();
 		LOGGER.info("Finished loading " + MOD_ID);
