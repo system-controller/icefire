@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "minecraft:sand"
+    },
+    {
+      "item": "icefire:nether_orb"
+    }
+  ],
+  "result":
+  {
+    "item": "minecraft:soul_sand"
+  }
+}
