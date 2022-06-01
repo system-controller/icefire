@@ -1,8 +1,12 @@
 package com.ikalon.icefire.items;
 
 import com.ikalon.icefire.IceFire;
+import com.ikalon.icefire.items.custom.FireSwordItem;
+import com.ikalon.icefire.items.custom.IceSwordItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolMaterials;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -10,7 +14,8 @@ import net.minecraft.util.registry.Registry;
 public class ModItems {
 
     public static final Item FIRE_SWORD = registerItem("fire_sword",
-            new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+            new FireSwordItem(ModToolMaterials.FIRE, 3, -2.5f,
+                    new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 
     public static final Item FROZEN_FISH = registerItem("frozen_fish",
             new Item(new FabricItemSettings()
@@ -24,7 +29,8 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 
     public static final Item ICE_SWORD = registerItem("ice_sword",
-            new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+            new IceSwordItem(ModToolMaterials.ICE, 3, -2.5f,
+                    new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 
     public static final Item NETHER_ORB = registerItem("nether_orb",
             new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
