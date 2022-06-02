@@ -5,14 +5,8 @@ import com.ikalon.icefire.items.ModItemGroup;
 import com.ikalon.icefire.items.ModItems;
 import com.ikalon.icefire.recipes.ModRecipes;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.biome.v1.BiomeModification;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
-import net.minecraft.item.Items;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -28,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class IceFire implements ModInitializer {
 	public static final String MOD_ID = "icefire";
@@ -46,7 +41,7 @@ public class IceFire implements ModInitializer {
 	public static PlacedFeature OVERWORLD_ICE_PLACED_FEATURE = new PlacedFeature(
 			RegistryEntry.of(OVERWORLD_ICE_CONFIGURED_FEATURE),
 			Arrays.asList(
-					CountPlacementModifier.of(20),
+					CountPlacementModifier.of((int) (Math.random() * 2)),
 					SquarePlacementModifier.of(),
 					HeightRangePlacementModifier.uniform(YOffset.getBottom(),YOffset.fixed(64))
 			));
