@@ -3,10 +3,9 @@ package com.ikalon.icefire.items;
 import com.ikalon.icefire.IceFire;
 import com.ikalon.icefire.items.custom.FireSwordItem;
 import com.ikalon.icefire.items.custom.IceSwordItem;
+import com.ikalon.icefire.items.custom.NetherOrb;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterials;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -33,7 +32,7 @@ public class ModItems {
                     new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 
     public static final Item NETHER_ORB = registerItem("nether_orb",
-            new Item(new FabricItemSettings()
+            new NetherOrb(new FabricItemSettings()
                     .maxDamage(100)
                     .group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 

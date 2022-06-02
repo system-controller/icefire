@@ -1,8 +1,7 @@
 package com.ikalon.icefire.recipes;
 
 import com.google.gson.JsonObject;
-import com.ikalon.icefire.IceFire;
-import com.ikalon.icefire.items.ModItemGroup;
+import com.ikalon.icefire.items.custom.NetherOrb;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,9 +19,6 @@ public class OrbRecipe extends ShapelessRecipe {
                 original.getGroup(),
                 original.getOutput(),
                 original.getIngredients());
-        IceFire.LOGGER.info(original.getId().toString());
-        IceFire.LOGGER.info(original.getOutput().toString());
-        IceFire.LOGGER.info(original.getIngredients().toString());
     }
 
     @Override
@@ -42,7 +38,7 @@ public class OrbRecipe extends ShapelessRecipe {
         for (int i = 0; i < defaultedList.size(); ++i) {
             ItemStack stack = inventory.getStack(i);
             Item item = stack.getItem();
-            if (item.getGroup() == ModItemGroup.ICEFIRE_ITEMGROUP) {
+            if (item instanceof NetherOrb) {
                 int newDamage = stack.getDamage() + 1;
                 if (newDamage < stack.getMaxDamage()) {
                     stack = stack.copy();
@@ -73,7 +69,6 @@ public class OrbRecipe extends ShapelessRecipe {
         public static final String ID = "orb_recipe";
         @Override
         public ShapelessRecipe read(Identifier id, JsonObject json) {
-            IceFire.LOGGER.info("LOADED JSON");
             return new OrbRecipe(super.read(id, json));
         }
 
