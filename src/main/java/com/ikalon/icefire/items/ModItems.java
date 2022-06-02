@@ -2,6 +2,7 @@ package com.ikalon.icefire.items;
 
 import com.ikalon.icefire.IceFire;
 import com.ikalon.icefire.items.custom.FireSwordItem;
+import com.ikalon.icefire.items.custom.IceShardItem;
 import com.ikalon.icefire.items.custom.IceSwordItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -26,7 +27,7 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 
     public static final Item ICE_SHARD = registerItem("ice_shard",
-            new Item(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
+            new IceShardItem(new FabricItemSettings().group(ModItemGroup.ICEFIRE_ITEMGROUP)));
 
     public static final Item ICE_SWORD = registerItem("ice_sword",
             new IceSwordItem(ModToolMaterials.ICE, 3, -2.5f,
