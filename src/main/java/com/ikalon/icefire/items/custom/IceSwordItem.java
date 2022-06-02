@@ -34,28 +34,12 @@ public class IceSwordItem extends SwordItem {
         return super.postHit(stack, target, attacker);
     }
 
-    /*
-    @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        World world = context.getWorld();
-        if (!world.isClient) {
-            BlockPos blockPos = context.getBlockPos();
-            Block block = world.getBlockState(blockPos).getBlock();
-            IceFire.LOGGER.info(block.toString());
-            if (block == Blocks.WATER) {
-                world.setBlockState(blockPos, Blocks.ICE.getDefaultState());
-            }
-        }
-
-        return ActionResult.SUCCESS;
-    }*/
-
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
 
         if (!world.isClient()) {
-            BlockHitResult blockHitResult = SwordItem.raycast(world, user, RaycastContext.FluidHandling.WATER);
+            BlockHitResult blockHitResult = SwordItem.raycast(world, user, RaycastContext.FluidHandling.SOURCE_ONLY);
 
             if (blockHitResult.getType() == HitResult.Type.MISS) {
                 return TypedActionResult.pass(itemStack);
@@ -66,7 +50,7 @@ public class IceSwordItem extends SwordItem {
                 BlockState blockState = world.getBlockState(blockPos);
                 Block block = blockState.getBlock();
 
-                if (block == Blocks.WATER && blockState.getFluidState().isStill()) {
+                if (block == Blocks.WATER) {
                     world.setBlockState(blockPos, Blocks.ICE.getDefaultState());
                 }
             }
