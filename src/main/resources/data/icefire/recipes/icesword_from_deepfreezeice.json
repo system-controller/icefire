@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "icefire:deep_freeze_ice"
+    }
+  },
+  "result": {
+    "item": "icefire:ice_sword"
+  }
+}

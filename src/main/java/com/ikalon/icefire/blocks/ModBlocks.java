@@ -14,7 +14,7 @@ import net.minecraft.util.registry.Registry;
 
 public class ModBlocks {
 
-    public static final Block CRACKED_ICE = registerBlock("cracked_ice", new Block(FabricBlockSettings.of(Material.ICE)), ModItemGroup.ICEFIRE_ITEMGROUP);
+    public static final Block CRACKED_ICE = registerBlock("cracked_ice", new Block(FabricBlockSettings.of(Material.ICE).nonOpaque()), ModItemGroup.ICEFIRE_ITEMGROUP);
 
     public static final Block DEEP_FREEZE_ICE = registerBlock("deep_freeze_ice", new Block(FabricBlockSettings.of(Material.ICE)), ModItemGroup.ICEFIRE_ITEMGROUP);
 
