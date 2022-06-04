@@ -22,7 +22,7 @@
       "com.ikalon.icefire.IceFire"
     ],
     "client": [
-      "com.ikalon.icefire.registration.IceFireModClient"
+      "com.ikalon.icefire.IceFireClientMod"
     ]
   },
   "mixins": [
