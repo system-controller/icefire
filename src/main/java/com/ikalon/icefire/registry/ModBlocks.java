@@ -17,18 +17,18 @@ import net.minecraft.util.registry.Registry;
 
 public class ModBlocks {
 
-    public static final Block CRACKED_ICE = registerBlock("cracked_ice", new Block(FabricBlockSettings.of(Material.ICE).sounds(BlockSoundGroup.GLASS)), ModItemGroup.ICEFIRE_ITEMGROUP);
+    public static final Block CRACKED_ICE = registerBlock("cracked_ice", new Block(FabricBlockSettings.of(Material.ICE).sounds(BlockSoundGroup.GLASS).nonOpaque()), ModItemGroup.ICEFIRE_ITEMGROUP);
 
-    public static final Block DEEP_FREEZE_ICE = registerBlock("deep_freeze_ice", new Block(FabricBlockSettings.of(Material.ICE).sounds(BlockSoundGroup.GLASS)), ModItemGroup.ICEFIRE_ITEMGROUP);
+    public static final Block DEEP_FREEZE_ICE = registerBlock("deep_freeze_ice", new Block(FabricBlockSettings.of(Material.ICE).sounds(BlockSoundGroup.GLASS).nonOpaque()), ModItemGroup.ICEFIRE_ITEMGROUP);
 
-    public static final Block FAST_ICE = registerBlock("fast_ice", new Block(FabricBlockSettings.of(Material.ICE).slipperiness(1.02f).sounds(BlockSoundGroup.GLASS)), ModItemGroup.ICEFIRE_ITEMGROUP);
+    public static final Block FAST_ICE = registerBlock("fast_ice", new Block(FabricBlockSettings.of(Material.ICE).slipperiness(1.02f).sounds(BlockSoundGroup.GLASS).nonOpaque()), ModItemGroup.ICEFIRE_ITEMGROUP);
 
-    public static final Block SLOW_ICE = registerBlock("slow_ice", new Block(FabricBlockSettings.of(Material.ICE).velocityMultiplier(0.8f).slipperiness(0.98f).sounds(BlockSoundGroup.GLASS)), ModItemGroup.ICEFIRE_ITEMGROUP);
+    public static final Block SLOW_ICE = registerBlock("slow_ice", new Block(FabricBlockSettings.of(Material.ICE).velocityMultiplier(0.8f).slipperiness(0.98f).sounds(BlockSoundGroup.GLASS).nonOpaque()), ModItemGroup.ICEFIRE_ITEMGROUP);
 
     public static final Block TEST_ICE =
             registerBlock("test_ice",
                     new GlassBlock(FabricBlockSettings
-                            .copy(Blocks.GLASS)
+                            .copy(Blocks.ICE)
                             .nonOpaque()),
                     ModItemGroup.ICEFIRE_ITEMGROUP);
 

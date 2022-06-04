@@ -7,7 +7,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -56,8 +55,7 @@ public class IceShardEntity extends ThrownItemEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
         Entity entity = entityHitResult.getEntity();
-        int i = entity instanceof BlazeEntity ? 3 : 0;
-        entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), i);
+        entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), 3);
     }
 
     @Override

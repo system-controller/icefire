@@ -22,7 +22,9 @@ public class IceFireClientMod implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TEST_ICE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FAST_ICE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SLOW_ICE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DEEP_FREEZE_ICE, RenderLayer.getTranslucent());
         EntityRendererRegistry.register(IceFire.ICE_SHARD_ENTITY_ENTITY_TYPE, (context) ->
                 new FlyingItemEntityRenderer<>(context));
         receiveEntityPacket();
