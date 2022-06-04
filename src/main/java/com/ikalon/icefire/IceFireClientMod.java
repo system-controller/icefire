@@ -1,6 +1,6 @@
 package com.ikalon.icefire;
 
-import com.ikalon.icefire.blocks.ModBlocks;
+import com.ikalon.icefire.registry.ModBlocks;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;
