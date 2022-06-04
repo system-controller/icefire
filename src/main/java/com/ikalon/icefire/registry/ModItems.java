@@ -1,6 +1,9 @@
-package com.ikalon.icefire.items;
+package com.ikalon.icefire.registry;
 
 import com.ikalon.icefire.IceFire;
+import com.ikalon.icefire.items.ModFoodComponents;
+import com.ikalon.icefire.items.ModItemGroup;
+import com.ikalon.icefire.items.ModToolMaterials;
 import com.ikalon.icefire.items.custom.FireSwordItem;
 import com.ikalon.icefire.items.custom.IceShardItem;
 import com.ikalon.icefire.items.custom.IceSwordItem;

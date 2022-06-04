@@ -1,6 +1,7 @@
 package com.ikalon.icefire.items;
 
 import com.ikalon.icefire.IceFire;
+import com.ikalon.icefire.registry.ModItems;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;

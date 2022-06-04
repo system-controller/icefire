@@ -1,12 +1,19 @@
 package com.ikalon.icefire;
 
-import com.ikalon.icefire.blocks.ModBlocks;
+import com.ikalon.icefire.registry.ModBlocks;
+import com.ikalon.icefire.entity.IceShardEntity;
 import com.ikalon.icefire.items.ModItemGroup;
-import com.ikalon.icefire.items.ModItems;
-import com.ikalon.icefire.recipes.ModRecipes;
+import com.ikalon.icefire.registry.ModItems;
+import com.ikalon.icefire.registry.ModRecipes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
+import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -22,7 +29,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class IceFire implements ModInitializer {
 	public static final String MOD_ID = "icefire";
@@ -31,6 +37,10 @@ public class IceFire implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	// instance of our particle
+	public static final DefaultParticleType SIMPLE_TEST_PARTICLE = FabricParticleTypes.simple();
+
 
 	private static ConfiguredFeature<?, ?> OVERWORLD_ICE_CONFIGURED_FEATURE = new
 			ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(
@@ -45,13 +55,19 @@ public class IceFire implements ModInitializer {
 					SquarePlacementModifier.of(),
 					HeightRangePlacementModifier.uniform(YOffset.getBottom(),YOffset.fixed(64))
 			));
-
+	public static final EntityType<IceShardEntity> ICE_SHARD_ENTITY_ENTITY_TYPE = Registry.register(
+			Registry.ENTITY_TYPE,
+			new Identifier(MOD_ID, "ice_shard"),
+			FabricEntityTypeBuilder.<IceShardEntity>create(SpawnGroup.MISC, IceShardEntity::new)
+					.dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+					.trackRangeBlocks(4).trackedUpdateRate(10)
+					.build()
+	);
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-		LOGGER.info("Begin loading " + MOD_ID);
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
 				new Identifier("icefire","cracked_ice"),
 				OVERWORLD_ICE_CONFIGURED_FEATURE);
@@ -66,6 +82,8 @@ public class IceFire implements ModInitializer {
 		ModItemGroup.registerModItemGroup();
 		ModBlocks.registerModBlocks();
 		ModRecipes.registerRecipes();
+		Registry.register(Registry.PARTICLE_TYPE, new Identifier("icefire", "simple_test_particle"), SIMPLE_TEST_PARTICLE);
+		LOGGER.info("Begin loading " + MOD_ID);
 		LOGGER.info("Finished loading " + MOD_ID);
 	}
 }

@@ -1,15 +1,17 @@
 package com.ikalon.icefire.entity;
 
-import com.ikalon.icefire.items.ModItems;
+import com.ikalon.icefire.IceFire;
+import com.ikalon.icefire.registry.ModItems;
+import com.ikalon.icefire.registry.IceFireModClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.BlazeEntity;
-import net.minecraft.entity.projectile.thrown.SnowballEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.Packet;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
@@ -18,16 +20,16 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class IceShardEntity extends ThrownItemEntity {
-    public IceShardEntity(EntityType<? extends SnowballEntity> entityType, World world) {
+    public IceShardEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
     }
 
     public IceShardEntity(World world, LivingEntity owner) {
-        super(EntityType.SNOWBALL, owner, world);
+        super(IceFire.ICE_SHARD_ENTITY_ENTITY_TYPE, owner, world);
     }
 
     public IceShardEntity(World world, double x, double y, double z) {
-        super(EntityType.SNOWBALL, x, y, z, world);
+        super(IceFire.ICE_SHARD_ENTITY_ENTITY_TYPE, x, y, z, world);
     }
 
     @Override
@@ -58,6 +60,10 @@ public class IceShardEntity extends ThrownItemEntity {
         entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), i);
     }
 
+    @Override
+    public Packet createSpawnPacket() {
+        return EntitySpawnPacket.create(this, IceFireModClient.PacketID);
+    }
     @Override
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);

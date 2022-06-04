@@ -1,4 +1,4 @@
-package com.ikalon.icefire.blocks;
+package com.ikalon.icefire.registry;
 
 import com.ikalon.icefire.IceFire;
 import com.ikalon.icefire.items.ModItemGroup;

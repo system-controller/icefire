@@ -4,6 +4,7 @@ import com.ikalon.icefire.entity.IceShardEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
@@ -27,7 +28,9 @@ public class IceShardItem extends Item {
         if (!world.isClient()) {
             IceShardEntity iceShardEntity = new IceShardEntity(world, user);
             iceShardEntity.setItem(itemStack);
+            iceShardEntity.setPitch(12f);
             iceShardEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 1.5f, 1.0f);
+            iceShardEntity.setBodyYaw(90);
             world.spawnEntity(iceShardEntity);
         }
 
