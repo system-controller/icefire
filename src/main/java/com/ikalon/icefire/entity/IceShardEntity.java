@@ -1,8 +1,8 @@
 package com.ikalon.icefire.entity;
 
 import com.ikalon.icefire.IceFire;
+import com.ikalon.icefire.IceFireClientMod;
 import com.ikalon.icefire.registry.ModItems;
-import com.ikalon.icefire.registry.IceFireModClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -62,7 +62,7 @@ public class IceShardEntity extends ThrownItemEntity {
 
     @Override
     public Packet createSpawnPacket() {
-        return EntitySpawnPacket.create(this, IceFireModClient.PacketID);
+        return EntitySpawnPacket.create(this, IceFireClientMod.PacketID);
     }
     @Override
     protected void onCollision(HitResult hitResult) {

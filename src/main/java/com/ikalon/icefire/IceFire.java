@@ -38,9 +38,6 @@ public class IceFire implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	// instance of our particle
-	public static final DefaultParticleType SIMPLE_TEST_PARTICLE = FabricParticleTypes.simple();
-
 
 	private static ConfiguredFeature<?, ?> OVERWORLD_ICE_CONFIGURED_FEATURE = new
 			ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig(
@@ -82,7 +79,6 @@ public class IceFire implements ModInitializer {
 		ModItemGroup.registerModItemGroup();
 		ModBlocks.registerModBlocks();
 		ModRecipes.registerRecipes();
-		Registry.register(Registry.PARTICLE_TYPE, new Identifier("icefire", "simple_test_particle"), SIMPLE_TEST_PARTICLE);
 		LOGGER.info("Begin loading " + MOD_ID);
 		LOGGER.info("Finished loading " + MOD_ID);
 	}
