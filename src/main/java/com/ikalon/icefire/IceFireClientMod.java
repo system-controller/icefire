@@ -24,7 +24,7 @@ public class IceFireClientMod implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TEST_ICE, RenderLayer.getTranslucent());
         EntityRendererRegistry.register(IceFire.ICE_SHARD_ENTITY_ENTITY_TYPE, (context) ->
-                new FlyingItemEntityRenderer(context));
+                new FlyingItemEntityRenderer<>(context));
         receiveEntityPacket();
     }
 

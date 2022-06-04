@@ -1,19 +1,17 @@
 package com.ikalon.icefire;
 
-import com.ikalon.icefire.registry.ModBlocks;
 import com.ikalon.icefire.entity.IceShardEntity;
 import com.ikalon.icefire.items.ModItemGroup;
+import com.ikalon.icefire.registry.ModBlocks;
 import com.ikalon.icefire.registry.ModItems;
 import com.ikalon.icefire.registry.ModRecipes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
