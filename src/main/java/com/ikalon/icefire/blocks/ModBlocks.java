@@ -5,6 +5,8 @@ import com.ikalon.icefire.items.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.GlassBlock;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -23,6 +25,12 @@ public class ModBlocks {
 
     public static final Block SLOW_ICE = registerBlock("slow_ice", new Block(FabricBlockSettings.of(Material.ICE).velocityMultiplier(0.8f).slipperiness(0.98f).sounds(BlockSoundGroup.GLASS)), ModItemGroup.ICEFIRE_ITEMGROUP);
 
+    public static final Block TEST_ICE =
+            registerBlock("test_ice",
+                    new GlassBlock(FabricBlockSettings
+                            .copy(Blocks.GLASS)
+                            .nonOpaque()),
+                    ModItemGroup.ICEFIRE_ITEMGROUP);
 
     private static Block registerBlock(String name, Block block, ItemGroup group)
     {

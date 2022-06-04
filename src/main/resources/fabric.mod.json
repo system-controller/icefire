@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.ikalon.icefire.IceFire"
+    ],
+    "client": [
+      "com.ikalon.icefire.IceFireClientMod"
     ]
   },
   "mixins": [
